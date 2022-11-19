@@ -1,0 +1,50 @@
+.Snow {
+    background: url('../../../images/snow.jpg') no-repeat;
+    background-size: cover;
+}
+
+.Clouds {
+    background: url('../../../images/cloudy.jpg') no-repeat;
+    background-size: cover;
+}
+
+.Thunderstorm {
+    background: url('../../../images/thunderstorm.jpg') no-repeat;
+    background-size: cover;
+}
+
+.Drizzle, .Rain {
+    background: url('../../../images/rain.jpg') no-repeat;
+    background-size: cover;
+}
+
+.Atmosphere {
+    background: url('../../../images/fog.jpg') no-repeat;
+    background-size: cover;
+}
+
+.Clear {
+    background: url('../../../images/clear.jpg') no-repeat;
+    background-size: cover;
+}
+
+.main__container {
+    max-width: 1030px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    height: 100%;
+}
+
+.main__container-left {
+    display: flex;
+    align-items: center;
+}
+
+.main__container-right {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
