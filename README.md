@@ -20,3 +20,5 @@
 
 Основной фичей данного проекта является смена фона в зависимости от погоды на данном участке.
 ![](https://github.com/ronzhinairina/weather-js-app/blob/master/images/screen%20received%20data%202.png)
+
+В реализации было использовано API [OpenWeather](https://openweathermap.org/).
