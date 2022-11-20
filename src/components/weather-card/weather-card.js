@@ -36,7 +36,7 @@ export class WeatherCard extends HTMLElement {
                 <li>
                     <div class="widget__container-top">
                         <p class="widget__text-parameter">Влажность:</p>
-                        <p class="widget__text-value">${this.data.humidity}</p>
+                        <p class="widget__text-value">${this.data.humidity}%</p>
                     </div>
                 </li>
             </ul>
