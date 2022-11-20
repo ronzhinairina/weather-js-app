@@ -1,5 +1,6 @@
 # Weather app
 ### Проект на языке программирования JavaScript без использования дополнительных библиотек и фреймворков.
+[Ссылка на проект](http://a91257z3.beget.tech/)
 ![](https://github.com/ronzhinairina/weather-js-app/blob/master/images/main%20screen.png)
 
 С помощью данного приложения вы сможете узнать погоду в любой точке мира, зная ее координаты (широту и долготу).
@@ -19,5 +20,3 @@
 
 Основной фичей данного проекта является смена фона в зависимости от погоды на данном участке.
 ![](https://github.com/ronzhinairina/weather-js-app/blob/master/images/screen%20received%20data%202.png)
-
-[Ссылка на проект](http://a91257z3.beget.tech/)
