@@ -353,7 +353,24 @@ _defineProperty(Layout, "selector", 'app-layout');
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"components/weather-card/weather-card.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"utills/weather-translations.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.translations = void 0;
+var translations = {
+  Clouds: 'Облачно',
+  Snow: 'Снег',
+  Thunderstorm: 'Гроза',
+  Drizzle: 'Мелкий дождь',
+  Rain: 'Дождь',
+  Atmosphere: 'Туман',
+  Clear: 'Ясно'
+};
+exports.translations = translations;
+},{}],"components/weather-card/weather-card.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -361,6 +378,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.WeatherCard = void 0;
 require("./weather-card.css");
+var _weatherTranslations = require("../../utills/weather-translations");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -384,12 +402,13 @@ var WeatherCard = /*#__PURE__*/function (_HTMLElement) {
     _classCallCheck(this, WeatherCard);
     _this = _super.call(this);
     _this.render();
+    console.log(_weatherTranslations.translations);
     return _this;
   }
   _createClass(WeatherCard, [{
     key: "render",
     value: function render() {
-      this.innerHTML = "<section class=\"widget\">\n        <div class=\"widget__container\">\n            <div class=\"widget__container-top\">\n                <p class=\"widget__text-city\">".concat(this.data.place, "</p>\n                <p class=\"widget__text-degrees\">").concat(this.data.temperature, "\xB0</p>\n            </div>\n\n            <p class=\"widget__text-weather\">\u041F\u043E\u0433\u043E\u0434\u0430</p>\n\n            <ul>\n                <li>\n                    <div class=\"widget__container-top\">\n                        <p class=\"widget__text-parameter\">\u041E\u0449\u0443\u0449\u0430\u0435\u0442\u0441\u044F \u043A\u0430\u043A:</p>\n                        <p class=\"widget__text-value\">").concat(this.data.feels_like, "\xB0</p>\n                    </div>\n                </li>\n                <li>\n                    <div class=\"widget__container-top\">\n                        <p class=\"widget__text-parameter\">\u0414\u0430\u0432\u043B\u0435\u043D\u0438\u0435, \u043C\u043C \u0440\u0442. \u0441\u0442:</p>\n                        <p class=\"widget__text-value\">").concat(this.data.pressure, "</p>\n                    </div>\n                </li>\n                <li>\n                    <div class=\"widget__container-top\">\n                        <p class=\"widget__text-parameter\">\u0412\u043B\u0430\u0436\u043D\u043E\u0441\u0442\u044C:</p>\n                        <p class=\"widget__text-value\">").concat(this.data.humidity, "</p>\n                    </div>\n                </li>\n            </ul>\n        </div>\n    </section>");
+      this.innerHTML = "<section class=\"widget\">\n        <div class=\"widget__container\">\n            <div class=\"widget__container-top\">\n                <p class=\"widget__text-city\">".concat(this.data.place, "</p>\n                <p class=\"widget__text-degrees\">").concat(this.data.temperature, "\xB0</p>\n            </div>\n\n            <p class=\"widget__text-weather\">").concat(_weatherTranslations.translations[this.data.description], "</p>\n\n            <ul>\n                <li>\n                    <div class=\"widget__container-top\">\n                        <p class=\"widget__text-parameter\">\u041E\u0449\u0443\u0449\u0430\u0435\u0442\u0441\u044F \u043A\u0430\u043A:</p>\n                        <p class=\"widget__text-value\">").concat(this.data.feels_like, "\xB0</p>\n                    </div>\n                </li>\n                <li>\n                    <div class=\"widget__container-top\">\n                        <p class=\"widget__text-parameter\">\u0414\u0430\u0432\u043B\u0435\u043D\u0438\u0435, \u043C\u043C \u0440\u0442. \u0441\u0442:</p>\n                        <p class=\"widget__text-value\">").concat(this.data.pressure, "</p>\n                    </div>\n                </li>\n                <li>\n                    <div class=\"widget__container-top\">\n                        <p class=\"widget__text-parameter\">\u0412\u043B\u0430\u0436\u043D\u043E\u0441\u0442\u044C:</p>\n                        <p class=\"widget__text-value\">").concat(this.data.humidity, "</p>\n                    </div>\n                </li>\n            </ul>\n        </div>\n    </section>");
     }
   }, {
     key: "data",
@@ -406,7 +425,7 @@ var WeatherCard = /*#__PURE__*/function (_HTMLElement) {
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
 exports.WeatherCard = WeatherCard;
 _defineProperty(WeatherCard, "selector", 'app-weather-card');
-},{"./weather-card.css":"components/weather-card/weather-card.css"}],"component-register.js":[function(require,module,exports) {
+},{"./weather-card.css":"components/weather-card/weather-card.css","../../utills/weather-translations":"utills/weather-translations.js"}],"component-register.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -456,7 +475,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59015" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52745" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

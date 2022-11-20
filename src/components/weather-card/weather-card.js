@@ -1,4 +1,5 @@
 import './weather-card.css';
+import { translations } from '../../utills/weather-translations';
 
 export class WeatherCard extends HTMLElement {
     static selector = 'app-weather-card'
@@ -6,6 +7,7 @@ export class WeatherCard extends HTMLElement {
     constructor() {
         super();
         this.render();
+        console.log(translations);
     }
 
     render() {
@@ -16,7 +18,7 @@ export class WeatherCard extends HTMLElement {
                 <p class="widget__text-degrees">${this.data.temperature}°</p>
             </div>
 
-            <p class="widget__text-weather">Погода</p>
+            <p class="widget__text-weather">${translations[this.data.description]}</p>
 
             <ul>
                 <li>
