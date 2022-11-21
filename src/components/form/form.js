@@ -3,14 +3,11 @@ import './form.css';
 
 export class CoordinatesForm extends HTMLElement {
     static selector = 'app-form';
-    form;
-    formValid = false;
 
     constructor() {
         super();
         this.render();
         this.initEventListeners();
-        this.form = document.querySelector('.input__container');
     }
 
     render() {
